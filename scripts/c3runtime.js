@@ -4301,8 +4301,8 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
 {
 'use strict';
 {
-    const SERVER_HOST = '';
-    // const SERVER_HOST = 'https://gs.eponesh.com';
+    const SERVER_HOST = undefined;
+    // const SERVER_HOST = 'https://gs.';
 
     C3.Plugins.Eponesh_GameScore.Instance = class GameScoreInstance extends C3.SDKInstanceBase {
         constructor(inst, properties) {
@@ -4642,11 +4642,11 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
             this.gs.fullscreen.on('change', () => this.Trigger(this.conditions.OnFullscreenChange));
 
             // ads
-            // this.gs.ads.on('start', () => this.Trigger(this.conditions.OnAdsStart));
-            // this.gs.ads.on('close', (success) => {
-            //     this.isLastAdSuccess = success;
-            //     this.Trigger(this.conditions.OnAdsClose);
-            // });
+            this.gs.ads.on('start', () => this.Trigger(this.conditions.OnAdsStart));
+            this.gs.ads.on('close', (success) => {
+                this.isLastAdSuccess = success;
+                this.Trigger(this.conditions.OnAdsClose);
+            });
 
             // this.gs.ads.on('fullscreen:start', () => this.Trigger(this.conditions.OnAdsFullscreenStart));
             // this.gs.ads.on('fullscreen:close', () => this.Trigger(this.conditions.OnAdsFullscreenClose));
