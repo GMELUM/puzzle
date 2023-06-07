@@ -6194,7 +6194,7 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
         },
 
         ChangeLanguage(language) {
-            return this.gs.changeLanguage(this.mappers.language[0]);
+            return 'ru';
         },
 
         ChangeLanguageByCode(language = '') {
