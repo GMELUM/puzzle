@@ -4301,7 +4301,7 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
 {
 'use strict';
 {
-    const SERVER_HOST = 'https://gs.eponesh.com';
+    const SERVER_HOST = '';
     // const SERVER_HOST = 'https://gs.eponesh.com';
 
     C3.Plugins.Eponesh_GameScore.Instance = class GameScoreInstance extends C3.SDKInstanceBase {
@@ -4309,7 +4309,7 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
             super(inst);
 
             this.mappers = {
-                language: ['en', 'ru', 'fr', 'it', 'de', 'es', 'zh', 'pt', 'ko', 'ja'],
+                language: ['ru'],
                 avatarGenerator: [
                     'dicebear_retro',
                     'dicebear_identicon',
@@ -4480,7 +4480,7 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
                 changeAvatarGenerator: stub,
                 loadOverlay: stub,
                 isDev: false,
-                language: 'en',
+                language: 'ru',
                 avatarGenerator: 'dicebear_retro',
                 app: {
                     title: '',
@@ -4540,18 +4540,18 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
                     toggle() {}
                 },
                 ads: {
-                    isFullscreenAvailable: false,
-                    isRewardedAvailable: false,
-                    isPreloaderAvailable: false,
-                    isStickyAvailable: false,
-                    isAdblockEnabled: false,
-                    on() {},
-                    showFullscreen: stub,
-                    showRewardedVideo: stub,
-                    showPreloader: stub,
-                    showSticky: stub,
-                    closeSticky: stub,
-                    refreshSticky: stub
+                    // isFullscreenAvailable: false,
+                    // isRewardedAvailable: false,
+                    // isPreloaderAvailable: false,
+                    // isStickyAvailable: false,
+                    // isAdblockEnabled: false,
+                    // on() {},
+                    // showFullscreen: stub,
+                    // showRewardedVideo: stub,
+                    // showPreloader: stub,
+                    // showSticky: stub,
+                    // closeSticky: stub,
+                    // refreshSticky: stub
                 },
                 player: {
                     isStub: true,
@@ -4626,7 +4626,7 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
             });
 
             // leaderboard
-            this.gs.leaderboard.on('open', () => this.Trigger(this.conditions.OnLeaderboardOpen));
+            // this.gs.leaderboard.on('open', () => this.Trigger(this.conditions.OnLeaderboardOpen));
 
             // achievements
             this.gs.achievements.on('open', () => this.Trigger(this.conditions.OnAchievementsOpen));
@@ -4642,26 +4642,26 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
             this.gs.fullscreen.on('change', () => this.Trigger(this.conditions.OnFullscreenChange));
 
             // ads
-            this.gs.ads.on('start', () => this.Trigger(this.conditions.OnAdsStart));
-            this.gs.ads.on('close', (success) => {
-                this.isLastAdSuccess = success;
-                this.Trigger(this.conditions.OnAdsClose);
-            });
+            // this.gs.ads.on('start', () => this.Trigger(this.conditions.OnAdsStart));
+            // this.gs.ads.on('close', (success) => {
+            //     this.isLastAdSuccess = success;
+            //     this.Trigger(this.conditions.OnAdsClose);
+            // });
 
-            this.gs.ads.on('fullscreen:start', () => this.Trigger(this.conditions.OnAdsFullscreenStart));
-            this.gs.ads.on('fullscreen:close', () => this.Trigger(this.conditions.OnAdsFullscreenClose));
+            // this.gs.ads.on('fullscreen:start', () => this.Trigger(this.conditions.OnAdsFullscreenStart));
+            // this.gs.ads.on('fullscreen:close', () => this.Trigger(this.conditions.OnAdsFullscreenClose));
 
-            this.gs.ads.on('preloader:start', () => this.Trigger(this.conditions.OnAdsPreloaderStart));
-            this.gs.ads.on('preloader:close', () => this.Trigger(this.conditions.OnAdsPreloaderClose));
+            // this.gs.ads.on('preloader:start', () => this.Trigger(this.conditions.OnAdsPreloaderStart));
+            // this.gs.ads.on('preloader:close', () => this.Trigger(this.conditions.OnAdsPreloaderClose));
 
-            this.gs.ads.on('rewarded:start', () => this.Trigger(this.conditions.OnAdsRewardedStart));
-            this.gs.ads.on('rewarded:close', () => this.Trigger(this.conditions.OnAdsRewardedClose));
-            this.gs.ads.on('rewarded:reward', () => this.Trigger(this.conditions.OnAdsRewardedReward));
+            // this.gs.ads.on('rewarded:start', () => this.Trigger(this.conditions.OnAdsRewardedStart));
+            // this.gs.ads.on('rewarded:close', () => this.Trigger(this.conditions.OnAdsRewardedClose));
+            // this.gs.ads.on('rewarded:reward', () => this.Trigger(this.conditions.OnAdsRewardedReward));
 
-            this.gs.ads.on('sticky:start', () => this.Trigger(this.conditions.OnAdsStickyStart));
-            this.gs.ads.on('sticky:close', () => this.Trigger(this.conditions.OnAdsStickyClose));
-            this.gs.ads.on('sticky:refresh', () => this.Trigger(this.conditions.OnAdsStickyRefresh));
-            this.gs.ads.on('sticky:render', () => this.Trigger(this.conditions.OnAdsStickyRender));
+            // this.gs.ads.on('sticky:start', () => this.Trigger(this.conditions.OnAdsStickyStart));
+            // this.gs.ads.on('sticky:close', () => this.Trigger(this.conditions.OnAdsStickyClose));
+            // this.gs.ads.on('sticky:refresh', () => this.Trigger(this.conditions.OnAdsStickyRefresh));
+            // this.gs.ads.on('sticky:render', () => this.Trigger(this.conditions.OnAdsStickyRender));
 
             // socials
             this.gs.socials.on('share', (success) => {
