@@ -4540,18 +4540,18 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
                     toggle() {}
                 },
                 ads: {
-                    // isFullscreenAvailable: false,
-                    // isRewardedAvailable: false,
-                    // isPreloaderAvailable: false,
-                    // isStickyAvailable: false,
-                    // isAdblockEnabled: false,
-                    // on() {},
-                    // showFullscreen: stub,
-                    // showRewardedVideo: stub,
-                    // showPreloader: stub,
-                    // showSticky: stub,
-                    // closeSticky: stub,
-                    // refreshSticky: stub
+                    isFullscreenAvailable: false,
+                    isRewardedAvailable: false,
+                    isPreloaderAvailable: false,
+                    isStickyAvailable: false,
+                    isAdblockEnabled: false,
+                    on() {},
+                    showFullscreen: stub,
+                    showRewardedVideo: stub,
+                    showPreloader: stub,
+                    showSticky: stub,
+                    closeSticky: stub,
+                    refreshSticky: stub
                 },
                 player: {
                     isStub: true,
@@ -4642,11 +4642,11 @@ CurrentTime(){if(self["C3_GetAudioContextCurrentTime"])return self["C3_GetAudioC
             this.gs.fullscreen.on('change', () => this.Trigger(this.conditions.OnFullscreenChange));
 
             // ads
-            this.gs.ads.on('start', () => this.Trigger(this.conditions.OnAdsStart));
-            this.gs.ads.on('close', (success) => {
-                this.isLastAdSuccess = success;
-                this.Trigger(this.conditions.OnAdsClose);
-            });
+            // this.gs.ads.on('start', () => this.Trigger(this.conditions.OnAdsStart));
+            // this.gs.ads.on('close', (success) => {
+            //     this.isLastAdSuccess = success;
+            //     this.Trigger(this.conditions.OnAdsClose);
+            // });
 
             // this.gs.ads.on('fullscreen:start', () => this.Trigger(this.conditions.OnAdsFullscreenStart));
             // this.gs.ads.on('fullscreen:close', () => this.Trigger(this.conditions.OnAdsFullscreenClose));
